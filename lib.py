@@ -2,6 +2,7 @@ from random import randint
 import operator
 import sys
 import unittest
+import math
 
 #A random point in a 2D space
 class Point2D:
@@ -10,13 +11,20 @@ class Point2D:
         self.y = y_init
     
     def distance_to(self, other) -> int:
-        print("calculate distance between " + self + " " + other)
+        res = ((other.x - self.x)**2 + (other.y - self.y)**2 + (other.z - self.z)**2)
+        res = math.sqrt(res)
+        return res
 
 class Point3D:
     def __init__(self, x_init, y_init, z_init):
         self.x = x_init
         self.y = y_init
         self.z = z_init
+    
+    def distance_to(self, other) -> int:
+        res = ((other.x - self.x)**2 + (other.y - self.y)**2)
+        res = math.sqrt(res)
+        return res
 
 #Matrix class 2x2
 class Matrix:
