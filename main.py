@@ -1,12 +1,16 @@
-from lib import Matrix
-from lib import random_matrix
+from lib import *
 
-m1 = random_matrix(4,4)
-print (m1)
-m2 = Matrix(4,4)
-print(m1*m2)
+p1 = Point2D(1,1)
+p2 = Point2D(5,5)
+p3 = Point2D(1,3)
+p4 = Point2D(3,1)
 
+L1 = Point2D.line(p1, p2)
 
+L2 = Point2D.line(p3, p4)
 
+aa = Point2D.intersection(L1, L2)
+
+print (aa)
 
 

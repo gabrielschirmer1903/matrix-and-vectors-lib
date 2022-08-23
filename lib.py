@@ -15,6 +15,24 @@ class Point2D:
         res = math.sqrt(res)
         return res
 
+    def line(p1, p2):
+        A = (p1.y - p2.y)
+        B = (p2.x - p1.x)
+        C = (p1.x*p2.y - p2.x*p2.y)
+        return A, B, -C
+
+    def intersection(L1, L2):
+        D  = L1[0] * L2[1] - L1[1] * L2[0]
+        Dx = L1[2] * L2[1] - L1[1] * L2[2]
+        Dy = L1[0] * L2[2] - L1[2] * L2[0]
+        if D != 0:
+            x = Dx / D
+            y = Dy / D
+            return x,y
+        else:
+            return False
+
+
 class Point3D:
     def __init__(self, x_init, y_init, z_init):
         self.x = x_init
